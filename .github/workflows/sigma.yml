@@ -25,4 +25,4 @@ jobs:
         uses: jcroall/sigma-report-output@v0.1.0
         with:
             json-file-path: ./sigma-results.json
-
+            github-token: ${{ secrets.GITHUB_TOKEN }}
