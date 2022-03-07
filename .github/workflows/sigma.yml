@@ -1,0 +1,21 @@
+name: Sigma
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Sigma
+        run: |
+          wget -qO- https://sig-repo.synopsys.com/artifactory/sigma-release-trial/latest/sigma-linux_x86_64 && \
+            chmod +x sigma-linux_x86_64 && \
+            ./sigma-linux_x86_64 analyze
