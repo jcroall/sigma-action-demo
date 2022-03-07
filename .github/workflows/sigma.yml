@@ -16,6 +16,6 @@ jobs:
       
       - name: Sigma
         run: |
-          wget -qO https://sig-repo.synopsys.com/artifactory/sigma-release-trial/latest/sigma-linux_x86_64 && \
-            chmod +x sigma-linux_x86_64 && \
-            ./sigma-linux_x86_64 analyze
+          curl --output sigma_linux https://sig-repo.synopsys.com/artifactory/sigma-release-trial/latest/sigma-linux_x86_64 && \
+            chmod +x sigma_linux && \
+            ./sigma_linux analyze
